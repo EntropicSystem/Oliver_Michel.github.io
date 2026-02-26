@@ -1,0 +1,940 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 100px;
+    /* Ajusta este valor según la altura del header */
+}
+
+.contenedor-header {
+    background: linear-gradient(to right, #bbbebf, #203a43, #2c5364);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.contenedor-header header {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.contenedor-header header .logo a {
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 36px;
+    color: #f8f3f3;
+}
+
+.contenedor-header header ul {
+    display: flex;
+    list-style: none;
+}
+
+.contenedor-header header nav ul li a {
+    text-decoration: none;
+    color: #bab6b6;
+    margin: 0 15px;
+    transition: .5s;
+    text-align: none;
+}
+
+.contenedor-header header nav ul li a:hover {
+    color: #ffffff;
+}
+
+.nav-responsive {
+    background-color: cadetblue;
+    color: #fcfafa;
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.inicio {
+    background: #4682B4;
+    background: linear-gradient(to right, #a1a3a3, #203a43, #2c5364);
+    color: #ffffff;
+    padding: 100px 20px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.inicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, transparent 65%);
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+.contenido-banner {
+    position: relative;
+    z-index: 1;
+}
+
+.contenedor-imagen img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ffdf91;
+    /* Bordes con un color temático */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.redes a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    /* Tamaño del círculo */
+    height: 50px;
+    /* Tamaño del círculo */
+    border-radius: 50%;
+    /* Hace el círculo */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Fondo transparente */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    /* Borde semitransparente */
+    color: #ffffff;
+    margin: 10px 12px;
+    font-size: 1.10rem;
+    color: #dc9212;
+    transition: transform 0.5s, color 0.5s;
+}
+
+.redes a:hover {
+    transform: scale(1.4);
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    color: #ffdf91;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+    color: #ffffff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================
+   BRANDING PERSONAL
+========================= */
+.hero__degrees {
+    list-style: none;
+    padding: 15px 10px;
+    margin: 10px 10px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero__degrees li {
+    margin: 05px 10px;
+}
+
+.btn--outline {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 2px solid #013c56;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #07a319;
+    transition: all 0.3s ease;
+}
+
+.btn--outline:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+.BrandingPersonal {
+    padding: clamp(40px, 8vw, 80px) 5%;
+    background: linear-gradient(to right, #203a43, #2c5364);
+    color: #ffffff;
+}
+
+.BrandingPersonal .contenido-seccion {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* TÍTULO RESPONSIVE */
+.BrandingPersonal h2 {
+    font-size: clamp(28px, 5vw, 48px);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* TEXTO */
+.BrandingPersonal .contenido-seccion p {
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.BrandingPersonal .contenido-seccion p span {
+    font-weight: bold;
+    color: #a8f0a8;
+}
+
+/* FILA FLEXIBLE */
+.BrandingPersonal .fila {
+    display: flex;
+    flex-wrap: wrap;
+    /* CLAVE */
+    gap: 40px;
+    justify-content: space-between;
+}
+
+/* COLUMNAS FLEXIBLES */
+.BrandingPersonal .fila .col {
+    flex: 1 1 450px;
+    /* Crece, se adapta y tiene mínimo */
+}
+
+/* SUBTÍTULOS */
+.BrandingPersonal .fila .col h3 {
+    font-size: clamp(22px, 3vw, 30px);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* LISTAS */
+.BrandingPersonal .fila .col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.BrandingPersonal .fila .col ul li {
+    margin: 12px 0;
+}
+
+.BrandingPersonal .fila .col ul li strong {
+    color: #91ffc3;
+    display: inline-block;
+    min-width: 140px;
+}
+
+.BrandingPersonal .fila .col ul li span {
+    background-color: #2E8B57;
+    padding: 4px 10px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* INTERESES RESPONSIVE */
+.BrandingPersonal .contenido-intereses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* CÍRCULOS PROPORCIONALES */
+.BrandingPersonal .interes {
+    flex: 1 1 110px;
+    max-width: 110px;
+    aspect-ratio: 1/1;
+    /* Hace el círculo perfecto */
+    background-color: #203a43;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    text-align: center;
+    padding: 10px;
+}
+
+.BrandingPersonal .interes:hover {
+    background-color: #2c5364;
+    transform: scale(1.0);
+}
+
+.BrandingPersonal .interes i {
+    font-size: clamp(20px, 3vw, 22px);
+    margin-bottom: 8px;
+}
+
+/* BOTÓN */
+.BrandingPersonal button {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    margin: 40px auto 0 auto;
+    padding: 10px 20px;
+    font-size: clamp(14px, 2vw, 16px);
+    color: #98FB98;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.BrandingPersonal button:hover {
+    background-color: rgba(226, 207, 207, 0.1);
+}
+
+/* Habilidades */
+/* HABILIDADES PROFESIONAL*/
+.habilidades {
+    padding: clamp(60px, 8vw, 100px) 5%;
+    background: linear-gradient(to right, #203a43, #2c5364);
+    color: #ffffff;
+}
+
+.habilidades .contenido-seccion {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* TÍTULO */
+.habilidades h2 {
+    font-size: clamp(28px, 5vw, 42px);
+    text-align: center;
+    margin-bottom: 50px;
+    color: #83ee59;
+}
+
+/* FILA FLEXIBLE */
+.habilidades .fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* COLUMNAS */
+.habilidades .col {
+    flex: 1 1 400px;
+}
+
+/* SUBTÍTULOS */
+.habilidades h3 {
+    font-size: clamp(20px, 3vw, 26px);
+    text-align: center;
+    margin-bottom: 25px;
+    color: #60f173;
+}
+
+/* CADA HABILIDAD */
+.habilidades .habilidad {
+    margin-bottom: 25px;
+}
+
+/* TEXTO */
+.habilidades .habilidad span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+/* BARRA BASE */
+.habilidades .barra-habilidades {
+    width: 100%;
+    height: 14px;
+    background-color: #1a2d33;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* PROGRESO */
+.habilidades .progreso {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #83ee59, #fdfbfb);
+    border-radius: 10px;
+    position: relative;
+    animation: animacion-progreso 1.5s ease-in-out forwards;
+}
+
+/* TEXTO PORCENTAJE */
+.habilidades .progreso span {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* ANIMACIÓN */
+@keyframes animacion-progreso {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--nivel);
+    }
+}
+
+/*curriculum*/
+#curriculum {
+    background: linear-gradient(to right, #203a43, #2c5364);
+    padding: 80px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#curriculum h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #83ee59;
+    position: relative;
+    display: inline-block;
+}
+
+#curriculum .contenido-seccion {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#curriculum .fila {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#curriculum .col-izquierda,
+#curriculum .col-derecha {
+    flex: 1;
+    padding: 0 20px;
+}
+
+#curriculum h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #83ee59;
+}
+
+/* Estilos para los items de educación y experiencia */
+#curriculum .item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#curriculum .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#curriculum .item h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+#curriculum .item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+#curriculum .item a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#curriculum .item a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para las fechas */
+#curriculum .item p:last-of-type {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos para los enlaces de GitHub o proyectos */
+#curriculum .item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#curriculum .item a:hover {
+    text-decoration: underline;
+}
+
+/*portafolio*/
+#portafolio {
+    background: linear-gradient(to right, #203a43, #2c5364);
+    padding: 80px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#portafolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #83ee59;
+    position: relative;
+    display: inline-block;
+}
+
+#portafolio .contenido-seccion {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#portafolio .galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#portafolio .proyecto {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.8s ease-in-out;
+}
+
+#portafolio .proyecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#portafolio .proyecto img:first-child {
+    opacity: 1;
+}
+
+#portafolio .proyecto:hover img {
+    opacity: 1;
+}
+
+#portafolio .proyecto:hover img:not(:first-child) {
+    opacity: 0;
+}
+
+#portafolio .proyecto .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#portafolio .proyecto:hover .overlay {
+    opacity: 1;
+}
+
+#portafolio .proyecto .overlay h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Animación para mostrar las imágenes */
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#portafolio .proyecto:hover img:nth-child(2) {
+    animation: slide 4s infinite;
+}
+
+#portafolio .proyecto:hover img:nth-child(3) {
+    animation: slide 4s infinite 1s;
+}
+
+#portafolio .proyecto:hover img:nth-child(4) {
+    animation: slide 4s infinite 2s;
+}
+
+#contacto {
+    background: linear-gradient(to right, #203a43, #2c5364);
+    padding: 80px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#contacto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #83ee59;
+    position: relative;
+    display: inline-block;
+}
+
+#contacto h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #60f173;
+    width: 100%;
+}
+
+#contacto .contenido-seccion {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#contacto p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+#contacto .fila {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#contacto .col {
+    flex: 1;
+    min-width: 300px;
+    background: linear-gradient(to right, #203a43, #2c5364);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los campos de entrada cuando están enfocados (clic) */
+#contacto input:focus,
+#contacto textarea:focus {
+    color: #ffffff;
+    /* Color del texto al escribir */
+    border-color: #83ee59;
+    /* Cambiar el color del borde al enfocar */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Fondo más claro al enfocar */
+}
+
+/* Estilos para los placeholders cuando el campo está enfocado */
+#contacto input:focus::placeholder,
+#contacto textarea:focus::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    /* Color del placeholder al enfocar */
+}
+
+/* Estilos para los campos de formulario */
+#contacto input,
+#contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #203a43, #2c5364);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contacto textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+#contacto button {
+    background-color: #1bec61;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#contacto button .overlay {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: left 0.3s ease;
+}
+
+#contacto button:hover {
+    background-color: #87eea6;
+}
+
+/* Estilos para la información de contacto */
+#contacto .info ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#contacto .info ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #f8f4f4;
+}
+
+#contacto .info ul li i {
+    margin-right: 10px;
+    color: #69db34;
+}
+
+/* Estilos para las redes sociales */
+#contacto .redes-sociales {
+    margin-top: 20px;
+}
+
+#contacto .redes-sociales a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #73d419;
+    transition: color 0.3s ease;
+}
+
+#contacto .redes-sociales a:hover {
+    color: #dbf8a6;
+}
+
+/* Estilos para el mapa */
+#contacto .mapa {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#contacto img {
+    max-width: 100%;
+    width: 550px;
+    /* Tamaño reducido del mapa */
+    height: 350px;
+    /* Altura reducida para que sea más cuadrada */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    /* Asegura que la imagen se ajuste al contenedor */
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    /* Color de WhatsApp */
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    animation: bounce 2s infinite;
+    /* Animación de rebote */
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    /* Color más oscuro al hacer hover */
+}
+
+.whatsapp-float i {
+    margin-top: 5px;
+    /* Ajustar posición del ícono */
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/*responsive*/
+@media (max-width: 768px) {
+
+    /* Menú y Header */
+    .contenedor-header header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #203a43;
+        position: absolute;
+        top: 60px;
+        /* Ajusta según la altura del header */
+        right: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav-responsive {
+        display: block;
+    }
+
+    /* Sección Inicio */
+    .inicio {
+        padding: 80px 20px;
+    }
+
+    /* Branding Personal Mi */
+    .BrandingPersonal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .BrandingPersonal .fila .col {
+        width: 100%;
+    }
+
+    /* Sección Curriculum */
+    #curriculum .fila {
+        flex-direction: column;
+    }
+
+    #curriculum .col-izquierda,
+    #curriculum .col-derecha {
+        padding: 0;
+    }
+
+    #curriculum h2 {
+        font-size: 2rem;
+    }
+
+    #curriculum h3 {
+        font-size: 1.5rem;
+    }
+
+    #curriculum .item h4 {
+        font-size: 1.2rem;
+    }
+
+    #curriculum .item p {
+        font-size: 0.9rem;
+    }
+
+    /* Sección Portafolio */
+    #portafolio h2 {
+        font-size: 2rem;
+    }
+
+    #portafolio .proyecto {
+        width: 100%;
+        height: 250px;
+    }
+
+    /* Sección Contacto */
+    #contacto .fila {
+        flex-direction: column;
+    }
+
+    #contacto .col {
+        margin-bottom: 20px;
+    }
+}
